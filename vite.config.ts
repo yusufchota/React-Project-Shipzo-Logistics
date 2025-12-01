@@ -16,8 +16,9 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist/spa",
   },
-   base: mode === "production" ? "/Shipzo-Logistics/" : "/",
-  plugins: [react(), expressPlugin()],
+  base: mode === "production" ? "/Shipzo-Logistics/" : "/",
+  plugins: mode === "development" ? [react(), expressPlugin()] : [react()],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./client"),
