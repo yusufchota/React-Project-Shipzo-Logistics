@@ -7,11 +7,12 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigationLinks = [
-    { label: "Pricing", href: "#pricing" },
+    { label: "Home", href: "/" },
     { label: "Schedules", href: "#schedules" },
     { label: "Tracking", href: "#tracking" },
     { label: "Services", href: "#services" },
     { label: "Company", href: "#company" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const advancedLink = { label: "Advanced", path: "/advanced" };
@@ -29,21 +30,34 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
+
           <nav className="hidden md:flex items-center gap-8">
-            {navigationLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navigationLinks.map((link) =>
+              link.href.startsWith("#") ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
+
+            {/* ADVANCED BUTTON → must be added separately */}
             <Link
-              to={advancedLink.path}
+              to="/advanced"
               className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
             >
-              {advancedLink.label}
+              Advanced
             </Link>
           </nav>
 
@@ -73,16 +87,28 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden pb-4 border-t border-gray-100">
             <nav className="flex flex-col gap-4 pt-4">
-              {navigationLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
+                {navigationLinks.map((link) =>
+                link.href.startsWith("#") ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
+
               <Link
                 to={advancedLink.path}
                 className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"

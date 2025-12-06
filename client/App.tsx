@@ -10,6 +10,8 @@ import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Advanced from "./pages/Advanced";
 import NotFound from "./pages/NotFound";
+import Contact from "./pages/Contact";
+import ClientShipment from "./pages/ClientShipment";
 
 // Dashboard layout + pages
 import Layout from "./dashboard/components/Layout.jsx";
@@ -36,6 +38,10 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
           <Route path="/advanced" element={<Advanced />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/client-shipment" element={<ClientShipment />} />
+
+
 
           {/* Protected dashboard routes */}
           <Route
