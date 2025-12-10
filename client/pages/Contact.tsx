@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
 import { motion } from "framer-motion";
+import image from "../Image/Y-Logo (1).png";
+import { Link } from "react-router-dom";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +24,18 @@ const Contact: React.FC = () => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+
+      <div className="w-full fixed top-0 left-0 bg-white shadow-md p-4 z-50">
+        {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 font-bold text-xl text-primary hover:opacity-80 transition-opacity">
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+              <img src={image} alt="LOGO"/>
+            </div>
+            <span className="hidden sm:inline">Shipzo Logistics</span>
+          </Link>
+      </div>
+
 
       <div className="min-h-screen bg-gray-100 flex justify-center items-start p-6 pt-28">
 

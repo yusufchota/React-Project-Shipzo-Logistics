@@ -5,6 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html {
+  overflow-x: hidden;
+}
+
+
 @layer base {
   /**
    * Tailwind CSS theme

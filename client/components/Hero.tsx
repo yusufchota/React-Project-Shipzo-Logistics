@@ -24,7 +24,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full lg:mt-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
 
           {/* 🔥 Animated Text Area */}
@@ -101,23 +101,13 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* 🔥 Animated Hero Image */}
-          <div className="hidden lg:flex items-center justify-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              whileHover={{ scale: 1.03 }}
-              className="relative w-full max-w-md h-96 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl shadow-2xl flex items-center justify-center overflow-hidden"
-            >
-              <motion.img
-                src={image}
-                alt="Hero-img"
-                style={{ height: "100%" }}
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </motion.div>
+          {/* 🔥 Fixed Hero Image (No Animation) */}
+          <div className="relative w-full lg:w-[500px] h-[380px] rounded-2xl shadow-2xl overflow-hidden">
+            <img
+              src={image}
+              alt="Hero"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
