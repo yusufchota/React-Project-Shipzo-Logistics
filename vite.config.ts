@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: "dist",
+    outDir: "dist/spa",
   },
   base: mode === "production" ? "/Shipzo-Logistics/" : "/",
   plugins: mode === "development" ? [react(), expressPlugin()] : [react()],
