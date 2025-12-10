@@ -10,6 +10,7 @@
       "dist/server/**/*.js"
     ]
   },
+  "homepage": "https://yusufchota.github.io/React-Project-Shipzo-Logistics/",
   "scripts": {
     "dev": "vite",
     "build": "npm run build:client && npm run build:server",
