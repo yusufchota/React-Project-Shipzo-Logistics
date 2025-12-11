@@ -43,7 +43,7 @@ export default function Header() {
               <div className="w-8 h-8 rounded-lg flex items-center justify-center">
                 <img src={image} alt="LOGO" />
               </div>
-              <span className="hidden sm:inline">Shipzo Logistics</span>
+              <span className="hidden sm:inline">ShipZo Logistics</span>
             </Link>
           </motion.div>
 

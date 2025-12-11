@@ -25,17 +25,32 @@ const Contact: React.FC = () => {
   return (
     <>
       {/* <Header /> */}
-
-      <div className="w-full fixed top-0 left-0 bg-white shadow-md p-4 z-50">
-        {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 font-bold text-xl text-primary hover:opacity-80 transition-opacity">
+      <div className="w-full fixed top-0 left-0 bg-white shadow-md p-4 z-50 flex items-center justify-between">
+        {/* Left Side: Logo + Name */}
+        <div className="flex items-center gap-2">
+          <Link 
+            to="/" 
+            className="flex items-center gap-2 font-bold text-xl text-primary hover:opacity-80 transition-opacity"
+          >
             <div className="w-8 h-8 rounded-lg flex items-center justify-center">
-              <img src={image} alt="LOGO"/>
+              <img src={image} alt="LOGO" />
             </div>
-            <span className="hidden sm:inline">Shipzo Logistics</span>
+            <span className="hidden sm:inline">ShipZo Logistics</span>
           </Link>
-      </div>
+        </div>
 
+        {/* RIGHT SIDE BUTTONS */}
+        <div className="flex items-center gap-4">
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              to="/login"
+              className="hidden sm:inline-flex px-6 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            >
+              Login
+            </Link>
+          </motion.div>
+        </div>
+      </div>
 
       <div className="min-h-screen bg-gray-100 flex justify-center items-start p-6 pt-28">
 

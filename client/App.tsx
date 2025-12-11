@@ -9,6 +9,10 @@ import { Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Advanced from "./pages/Advanced";
+import RequestDemo from "./pages/RequestDemoPage.jsx";
+
+
+
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import ClientShipment from "./pages/ClientShipment";
@@ -38,6 +42,7 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
           <Route path="/advanced" element={<Advanced />} />
+          <Route path="/RequestDemoPage" element={<RequestDemo />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/client-shipment" element={<ClientShipment />} />
 

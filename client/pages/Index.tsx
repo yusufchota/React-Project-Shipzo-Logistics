@@ -70,7 +70,7 @@ export default function Index() {
           {/* Bottom Bar */}
           <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/80 text-sm">
-              © 2024 Global Logistics. All rights reserved.
+              © {new Date().getFullYear()} Global Logistics. All rights reserved.
             </p>
             <div className="flex gap-6 text-white/80 text-sm">
               <a href="#" className="hover:text-white transition-colors">Twitter</a>
